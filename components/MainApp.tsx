@@ -5,7 +5,6 @@ import Image from 'next/image';
 import ChatInterface from './ChatInterface';
 import ExampleHomework from './ExampleHomework';
 import ParentSettings from './ParentSettings';
-import UsageTrackerComponent from './UsageTracker';
 
 export default function MainApp() {
   const [currentView, setCurrentView] = useState<'chat' | 'examples' | 'settings'>('chat');
@@ -36,9 +35,7 @@ export default function MainApp() {
     setCurrentView('chat');
   };
 
-  const handleUsageBlocked = () => {
-    // Usage blocked - could add additional logic here if needed
-  };
+
 
   return (
     <div className="min-h-screen bg-white">
@@ -132,8 +129,6 @@ export default function MainApp() {
           </div>
         </main>
       </div>
-      
-      <UsageTrackerComponent onUsageBlocked={handleUsageBlocked} />
     </div>
   );
 } 
