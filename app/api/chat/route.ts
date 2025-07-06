@@ -59,7 +59,7 @@ Remember:
       
       if (isLastUserMessage && files && files.length > 0) {
         // Include files in the last user message
-        const content: Array<{ type: string; text?: string; source?: any }> = [
+        const content: Array<{ type: string; text?: string; source?: { type: string; media_type: string; data: string } }> = [
           {
             type: 'text',
             text: msg.content

@@ -259,7 +259,7 @@ export default function ParentSettings({ childAge, onAgeChange }: ParentSettings
           </div>
           
           <p style={{ marginTop: '1rem', color: '#6b7280', fontSize: '0.875rem', textAlign: 'center' }}>
-            These settings control how the AI adapts its responses to your child's age and learning level.
+            These settings control how the AI adapts its responses to your child&apos;s age and learning level.
           </p>
         </div>
       </div>
@@ -273,7 +273,7 @@ export default function ParentSettings({ childAge, onAgeChange }: ParentSettings
           Parent Settings
         </h1>
         <p style={{ color: '#6b7280' }}>
-          Configure how ScoutChat adapts to your child's learning needs
+          Configure how ScoutChat adapts to your child&apos;s learning needs
         </p>
       </div>
 
