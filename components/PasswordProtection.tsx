@@ -80,7 +80,7 @@ export default function PasswordProtection({ onAuthenticated }: PasswordProtecti
             </p>
             <p style={{ fontSize: '0.875rem', color: '#6b7280' }}>
               This platform uses AI to guide children through learning using the Socratic method. 
-              We don't provide direct answers—we help kids think critically and discover solutions themselves.
+              We don&apos;t provide direct answers—we help kids think critically and discover solutions themselves.
             </p>
           </div>
         </div>

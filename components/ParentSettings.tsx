@@ -192,7 +192,7 @@ export default function ParentSettings({ childAge, onAgeChange }: ParentSettings
                 🔒 Password Security
               </h3>
               <ul style={{ color: '#6b7280', fontSize: '0.875rem', margin: 0 }}>
-                <li>• Choose a password you'll remember</li>
+                <li>• Choose a password you&apos;ll remember</li>
                 <li>• This password is stored locally on your device</li>
                 <li>• You can change it anytime in settings</li>
               </ul>

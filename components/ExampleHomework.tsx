@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { BookOpen, Play, Calculator, Beaker, Globe, Users } from 'lucide-react';
 
 interface ExampleHomeworkProps {
   onExampleSelect: (example: string) => void;
@@ -82,7 +81,7 @@ const examples: Example[] = [
     level: 'hard',
     ageRange: '14-18 years',
     description: 'Real-world applications of derivatives',
-    question: "A company's profit function is P(x) = -2x² + 100x - 800. At what production level is profit maximized?"
+    question: "A company&apos;s profit function is P(x) = -2x² + 100x - 800. At what production level is profit maximized?"
   },
   {
     id: '8',
@@ -90,7 +89,7 @@ const examples: Example[] = [
     subject: 'Chemistry',
     level: 'hard',
     ageRange: '14-18 years',
-    description: "Understanding Le Chatelier's principle",
+    description: "Understanding Le Chatelier&apos;s principle",
     question: 'In the reaction N₂ + 3H₂ ⇌ 2NH₃ + heat, what happens to the equilibrium if we increase the temperature?'
   },
   {
@@ -225,7 +224,7 @@ export default function ExampleHomework({ onExampleSelect }: ExampleHomeworkProp
                 border: '1px solid var(--scout-border)',
                 fontSize: '0.875rem'
               }}>
-                "{example.question}"
+                &quot;{example.question}&quot;
               </p>
             </div>
             
