@@ -9,7 +9,7 @@ ScoutChat is a beta educational platform designed for parents and educators to t
 ## 🌟 Features
 
 ### 🔐 Security & Privacy
-- **Password Protection**: Secure access with `scout_mindset` password
+- **Password Protection**: Parents set their own secure password on first access
 - **Privacy Policy**: Clear beta testing guidelines
 - **Age-Appropriate Content**: COPPA-compliant approach
 
@@ -64,10 +64,11 @@ ScoutChat is a beta educational platform designed for parents and educators to t
 
 ### First Time Setup
 
-1. Enter the password: `scout_mindset`
-2. Read and accept the privacy policy
-3. Configure your child's age in Parent Settings
-4. Start exploring the chat interface or example homework
+1. **Direct Access**: Navigate to the app (no site-wide password required)
+2. **Parent Settings**: Click "Parent Settings" to configure age
+3. **Create Password**: Set your personal parent password (first time only)
+4. **Configure Age**: Set your child's age (5-18 years)
+5. **Start Learning**: Explore chat interface or try example homework
 
 ## 🎓 Educational Approach
 
@@ -129,8 +130,8 @@ scout-chat/
 ├── components/
 │   ├── ChatInterface.tsx   # Chat functionality
 │   ├── ExampleHomework.tsx # Sample assignments
-│   ├── ParentSettings.tsx  # Age configuration
-│   ├── PasswordProtection.tsx # Security layer
+│   ├── MainApp.tsx         # Main application component
+│   ├── ParentSettings.tsx  # Age configuration & password setup
 │   └── PrivacyPolicy.tsx   # Beta guidelines
 └── public/
     └── *.svg               # Icons and assets

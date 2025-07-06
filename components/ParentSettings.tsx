@@ -20,7 +20,8 @@ export default function ParentSettings({ childAge, onAgeChange }: ParentSettings
   // Check if parent password exists on component mount
   const [hasParentPassword, setHasParentPassword] = useState(() => {
     if (typeof window !== 'undefined') {
-      return !!localStorage.getItem('scoutchat-parent-password');
+      const savedPassword = localStorage.getItem('scoutchat-parent-password');
+      return savedPassword !== null && savedPassword.trim() !== '';
     }
     return false;
   });
@@ -136,10 +137,10 @@ export default function ParentSettings({ childAge, onAgeChange }: ParentSettings
         <div>
           <div className="text-center" style={{ marginBottom: '2rem' }}>
             <h1 style={{ fontSize: '2rem', fontWeight: '700', marginBottom: '0.5rem', color: '#1f2937' }}>
-              Set Up Parent Password
+              Welcome to ScoutChat!
             </h1>
             <p style={{ color: '#6b7280' }}>
-              Create a secure password to access parent settings
+              First, create your personal parent password to secure these settings
             </p>
           </div>
 
