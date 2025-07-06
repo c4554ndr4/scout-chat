@@ -94,6 +94,19 @@ export default function ChatInterface({ childAge, initialQuestion, onQuestionPro
         .then(async response => {
           if (response.ok) {
             const data = await response.json();
+            
+            // Check if user is blocked due to usage limits
+            if (data.blocked) {
+              const errorMessage: Message = {
+                id: (Date.now() + 1).toString(),
+                role: 'assistant',
+                content: "You've reached your daily usage limit. Please try again tomorrow!",
+                timestamp: new Date()
+              };
+              setMessages(prev => [...prev, errorMessage]);
+              return;
+            }
+            
             const assistantMessage: Message = {
               id: (Date.now() + 1).toString(),
               role: 'assistant',
@@ -101,6 +114,15 @@ export default function ChatInterface({ childAge, initialQuestion, onQuestionPro
               timestamp: new Date()
             };
             setMessages(prev => [...prev, assistantMessage]);
+          } else if (response.status === 429) {
+            // Handle rate limiting - user exceeded usage
+            const errorMessage: Message = {
+              id: (Date.now() + 1).toString(),
+              role: 'assistant',
+              content: "You've reached your daily usage limit of $1.00. Your limit will reset in 24 hours. Thanks for using ScoutChat responsibly! 🎓",
+              timestamp: new Date()
+            };
+            setMessages(prev => [...prev, errorMessage]);
           } else {
             throw new Error('Failed to get response');
           }
@@ -165,6 +187,19 @@ export default function ChatInterface({ childAge, initialQuestion, onQuestionPro
 
       if (response.ok) {
         const data = await response.json();
+        
+        // Check if user is blocked due to usage limits
+        if (data.blocked) {
+          const errorMessage: Message = {
+            id: (Date.now() + 1).toString(),
+            role: 'assistant',
+            content: "You've reached your daily usage limit. Please try again tomorrow!",
+            timestamp: new Date()
+          };
+          setMessages(prev => [...prev, errorMessage]);
+          return;
+        }
+        
         const assistantMessage: Message = {
           id: (Date.now() + 1).toString(),
           role: 'assistant',
@@ -172,6 +207,15 @@ export default function ChatInterface({ childAge, initialQuestion, onQuestionPro
           timestamp: new Date()
         };
         setMessages(prev => [...prev, assistantMessage]);
+      } else if (response.status === 429) {
+        // Handle rate limiting - user exceeded usage
+        const errorMessage: Message = {
+          id: (Date.now() + 1).toString(),
+          role: 'assistant',
+          content: "You've reached your daily usage limit of $1.00. Your limit will reset in 24 hours. Thanks for using ScoutChat responsibly! 🎓",
+          timestamp: new Date()
+        };
+        setMessages(prev => [...prev, errorMessage]);
       } else {
         throw new Error('Failed to get response');
       }
